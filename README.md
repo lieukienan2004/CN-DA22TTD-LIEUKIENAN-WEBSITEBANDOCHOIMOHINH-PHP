@@ -244,7 +244,5 @@ Dự án này được phát hành dưới giấy phép MIT. Xem file [LICENSE](
 - Cộng đồng PHP và MySQL
 
 ---
-
-⭐ Nếu bạn thấy dự án hữu ích, hãy cho một star nhé!
-
-**Made with ❤️ by Liêu Kiến An**
+**Made with ❤️ by Liễu Kiện An**
+ 
