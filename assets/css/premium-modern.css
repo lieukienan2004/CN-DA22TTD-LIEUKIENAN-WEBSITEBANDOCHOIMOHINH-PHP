@@ -1,0 +1,404 @@
+/* Premium Modern UI Enhancements */
+
+:root {
+    /* Premium Color Palette */
+    --premium-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --glass-bg: rgba(255, 255, 255, 0.7);
+    --glass-border: rgba(255, 255, 255, 0.18);
+    --shadow-premium: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+    --shadow-hover: 0 15px 45px 0 rgba(31, 38, 135, 0.25);
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Body Background with Subtle Pattern */
+body {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    background-attachment: fixed;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle at 20% 50%, rgba(236, 72, 153, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Glassmorphism Effect for Cards */
+.product-card {
+    background: rgba(255, 255, 255, 0.85) !important;
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1) !important;
+}
+
+.product-card:hover {
+    background: rgba(255, 255, 255, 0.95) !important;
+    box-shadow: 0 15px 45px 0 rgba(31, 38, 135, 0.2) !important;
+    border: 1px solid rgba(236, 72, 153, 0.3) !important;
+}
+
+/* Category Cards with Glass Effect */
+.category-card {
+    background: rgba(255, 255, 255, 0.8) !important;
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1) !important;
+}
+
+.category-card:hover {
+    background: rgba(255, 255, 255, 0.95) !important;
+    box-shadow: 0 15px 45px 0 rgba(31, 38, 135, 0.2) !important;
+    transform: translateY(-12px) scale(1.03) !important;
+}
+
+/* Premium Header with Glass Effect */
+.header {
+    background: rgba(255, 255, 255, 0.9) !important;
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1) !important;
+}
+
+/* Enhanced Section Titles */
+.section-title {
+    font-size: 48px !important;
+    font-weight: 900 !important;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: -2px !important;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.section-title::after {
+    background: linear-gradient(90deg, transparent, #667eea, #764ba2, transparent) !important;
+    height: 4px !important;
+    width: 120px !important;
+    box-shadow: 0 2px 10px rgba(102, 126, 234, 0.5) !important;
+}
+
+/* Premium Button Styles */
+.btn-secondary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4) !important;
+    border: none !important;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.btn-secondary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s;
+}
+
+.btn-secondary:hover::before {
+    left: 100%;
+}
+
+.btn-secondary:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5) !important;
+}
+
+/* Enhanced Product Image Container */
+.product-image {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%) !important;
+    position: relative;
+    overflow: hidden;
+}
+
+.product-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.8) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.product-card:hover .product-image::before {
+    opacity: 1;
+}
+
+/* Premium Badge Styles */
+.badge {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%) !important;
+    box-shadow: 0 4px 15px rgba(245, 87, 108, 0.4) !important;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.badge-new {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%) !important;
+    box-shadow: 0 4px 15px rgba(79, 172, 254, 0.5) !important;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    animation: float 3s ease-in-out infinite !important;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Enhanced Price Display */
+.new-price {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    font-weight: 900 !important;
+    filter: drop-shadow(0 2px 4px rgba(102, 126, 234, 0.3));
+}
+
+/* Premium Search Box */
+.search-box {
+    background: rgba(255, 255, 255, 0.9) !important;
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    box-shadow: 0 4px 16px 0 rgba(31, 38, 135, 0.1) !important;
+}
+
+.search-box:focus-within {
+    background: rgba(255, 255, 255, 1) !important;
+    box-shadow: 0 8px 32px 0 rgba(102, 126, 234, 0.2) !important;
+    border: 1px solid rgba(102, 126, 234, 0.3) !important;
+}
+
+.search-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    box-shadow: none !important;
+}
+
+/* Enhanced Cart Button */
+.cart-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4) !important;
+}
+
+.cart-btn:hover {
+    background: linear-gradient(135deg, #5568d3 0%, #6a3f8f 100%) !important;
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5) !important;
+}
+
+/* Premium Icon Buttons */
+.icon-btn {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 2px 8px rgba(31, 38, 135, 0.1);
+}
+
+.icon-btn:hover {
+    background: rgba(255, 255, 255, 1) !important;
+    box-shadow: 0 4px 16px rgba(102, 126, 234, 0.2) !important;
+    border: 1px solid rgba(102, 126, 234, 0.3);
+}
+
+/* Enhanced Wishlist Button */
+.wishlist-btn {
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(10px) saturate(180%);
+    -webkit-backdrop-filter: blur(10px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    box-shadow: 0 4px 12px rgba(31, 38, 135, 0.15) !important;
+}
+
+.wishlist-btn:hover {
+    background: rgba(255, 255, 255, 1) !important;
+    box-shadow: 0 6px 20px rgba(236, 72, 153, 0.3) !important;
+}
+
+.wishlist-btn.active {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    border: 1px solid rgba(102, 126, 234, 0.3) !important;
+}
+
+/* Premium Banner Styles */
+.banner-wrapper {
+    box-shadow: 0 10px 40px rgba(31, 38, 135, 0.15) !important;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.banner-wrapper:hover {
+    box-shadow: 0 15px 50px rgba(31, 38, 135, 0.25) !important;
+}
+
+/* Enhanced Slider Buttons */
+.slider-btn {
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(10px) saturate(180%);
+    -webkit-backdrop-filter: blur(10px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    box-shadow: 0 4px 16px rgba(31, 38, 135, 0.15) !important;
+}
+
+.slider-btn:hover {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    border: 1px solid rgba(102, 126, 234, 0.3) !important;
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.3) !important;
+}
+
+/* Premium Dropdown Menu */
+.dropdown-menu {
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    box-shadow: 0 10px 40px rgba(31, 38, 135, 0.2) !important;
+}
+
+.dropdown-menu a:hover {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3) !important;
+}
+
+/* Enhanced Category Icons */
+.category-icon {
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%) !important;
+    border: 1px solid rgba(102, 126, 234, 0.2) !important;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.1);
+}
+
+.category-card:hover .category-icon {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    border: 1px solid rgba(102, 126, 234, 0.3) !important;
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3) !important;
+}
+
+/* Premium Typography */
+.product-info h3 {
+    color: #2d3748 !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.5px;
+}
+
+.category-card h3 {
+    color: #2d3748 !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.5px;
+}
+
+/* Smooth Transitions */
+* {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Enhanced Sections Background */
+.categories,
+.products {
+    background: transparent !important;
+    position: relative;
+}
+
+/* Premium Logo Effect */
+.logo-icon {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.35) !important;
+}
+
+.logo-link:hover .logo-icon {
+    box-shadow: 0 12px 35px rgba(102, 126, 234, 0.5) !important;
+}
+
+.logo-name {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    animation: none !important;
+    filter: none !important;
+}
+
+/* Enhanced Nav Links */
+.nav a:hover {
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%) !important;
+    color: #667eea !important;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15) !important;
+}
+
+.nav a::before {
+    background: linear-gradient(90deg, #667eea, #764ba2) !important;
+}
+
+/* Premium Sale Card */
+.sale-card {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    box-shadow: 0 8px 32px rgba(245, 87, 108, 0.3) !important;
+}
+
+.sale-card:hover {
+    box-shadow: 0 15px 45px rgba(245, 87, 108, 0.4) !important;
+}
+
+/* Refined Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Premium Container */
+.container {
+    position: relative;
+    z-index: 1;
+}
+
+/* Enhanced Product Grid Spacing */
+.product-grid {
+    gap: 35px !important;
+}
+
+.category-grid {
+    gap: 35px !important;
+}
+
+/* Subtle Hover Effects */
+.product-card:hover .product-info h3 {
+    color: #667eea !important;
+}
+
+/* Premium Footer */
+.footer {
+    background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%) !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}

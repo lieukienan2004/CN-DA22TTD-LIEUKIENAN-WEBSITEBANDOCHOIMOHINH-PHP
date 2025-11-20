@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Modal</title>
+    <link rel="stylesheet" href="assets/css/modal.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 50px;
+        }
+        .test-btn {
+            padding: 15px 30px;
+            background: #6366f1;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Test Modal</h1>
+    <button class="test-btn" onclick="testModal()">Bấm để test modal</button>
+    
+    <!-- Product Modal -->
+    <div id="productModal" class="modal-overlay">
+        <div class="product-modal">
+            <button class="modal-close" onclick="closeProductModal()">
+                <i class="fas fa-times"></i>
+            </button>
+            
+            <div class="modal-content">
+                <div class="modal-image">
+                    <img id="modalImage" src="https://images.unsplash.com/photo-1606041011872-596597976b25?w=500" alt="Product">
+                    <div id="modalDiscountBadge" class="modal-discount-badge">-15%</div>
+                </div>
+                
+                <div class="modal-info">
+                    <h2 id="modalTitle" class="modal-title">Test Product</h2>
+                    
+                    <div class="modal-category">
+                        <i class="fas fa-tag"></i>
+                        <span id="modalCategory">Gundam</span>
+                    </div>
+                    
+                    <div id="modalPriceSection" class="modal-price-section">
+                        <div class="modal-price-group">
+                            <span class="modal-original-price">850,000đ</span>
+                            <span class="modal-discount-percent">-15%</span>
+                        </div>
+                        <div class="modal-current-price">722,500đ</div>
+                    </div>
+                    
+                    <div class="modal-description">
+                        <h4><i class="fas fa-info-circle"></i> Mô tả sản phẩm</h4>
+                        <p id="modalDescription">Đây là mô tả sản phẩm test</p>
+                    </div>
+                    
+                    <div class="modal-features">
+                        <div class="modal-feature">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Bảo hành chính hãng</span>
+                        </div>
+                        <div class="modal-feature">
+                            <i class="fas fa-truck"></i>
+                            <span>Giao hàng toàn quốc</span>
+                        </div>
+                        <div class="modal-feature">
+                            <i class="fas fa-headset"></i>
+                            <span>Hỗ trợ 24/7</span>
+                        </div>
+                        <div class="modal-feature">
+                            <i class="fas fa-certificate"></i>
+                            <span>Sản phẩm chính hãng</span>
+                        </div>
+                    </div>
+                    
+                    <div class="modal-stock">
+                        <i class="fas fa-circle"></i>
+                        <span id="modalStock">Còn 25 sản phẩm</span>
+                    </div>
+                    
+                    <div class="modal-quantity">
+                        <label>Số lượng:</label>
+                        <div class="modal-qty-input">
+                            <button type="button" class="modal-qty-btn" onclick="alert('Decrease')">
+                                <i class="fas fa-minus"></i>
+                            </button>
+                            <input type="number" id="modalQuantity" value="1" min="1" readonly>
+                            <button type="button" class="modal-qty-btn" onclick="alert('Increase')">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="modal-actions">
+                        <button class="modal-btn modal-btn-cart" onclick="alert('Add to cart')">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span>Thêm vào giỏ</span>
+                        </button>
+                        <button class="modal-btn modal-btn-buy" onclick="alert('Buy now')">
+                            <i class="fas fa-bolt"></i>
+                            <span>Mua ngay</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function testModal() {
+            console.log('Test button clicked');
+            const modal = document.getElementById('productModal');
+            console.log('Modal element:', modal);
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeProductModal() {
+            const modal = document.getElementById('productModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    </script>
+</body>
+</html>

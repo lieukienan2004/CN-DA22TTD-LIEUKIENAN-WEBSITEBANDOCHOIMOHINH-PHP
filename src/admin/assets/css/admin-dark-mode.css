@@ -1,0 +1,230 @@
+/* Admin Dark Mode Styles */
+:root {
+    /* Light Theme */
+    --bg-primary-light: #f9fafb;
+    --bg-secondary-light: #ffffff;
+    --bg-tertiary-light: #f3f4f6;
+    --text-primary-light: #1f2937;
+    --text-secondary-light: #6b7280;
+    --border-color-light: #e5e7eb;
+    
+    /* Dark Theme */
+    --bg-primary-dark: #0f172a;
+    --bg-secondary-dark: #1e293b;
+    --bg-tertiary-dark: #334155;
+    --text-primary-dark: #f1f5f9;
+    --text-secondary-dark: #cbd5e1;
+    --border-color-dark: #334155;
+}
+
+/* Default Light Theme */
+body {
+    --bg-primary: var(--bg-primary-light);
+    --bg-secondary: var(--bg-secondary-light);
+    --bg-tertiary: var(--bg-tertiary-light);
+    --text-primary: var(--text-primary-light);
+    --text-secondary: var(--text-secondary-light);
+    --border-color: var(--border-color-light);
+}
+
+/* Dark Theme */
+body[data-theme="dark"] {
+    --bg-primary: var(--bg-primary-dark);
+    --bg-secondary: var(--bg-secondary-dark);
+    --bg-tertiary: var(--bg-tertiary-dark);
+    --text-primary: var(--text-primary-dark);
+    --text-secondary: var(--text-secondary-dark);
+    --border-color: var(--border-color-dark);
+}
+
+/* Apply theme colors */
+body {
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.sidebar {
+    background: var(--bg-secondary);
+    border-right-color: var(--border-color);
+}
+
+.sidebar-header {
+    background: var(--bg-primary);
+    border-bottom-color: var(--border-color);
+}
+
+.nav-item {
+    color: var(--text-secondary);
+}
+
+.nav-item:hover {
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+}
+
+.admin-header {
+    background: var(--bg-secondary);
+    border-bottom-color: var(--border-color);
+}
+
+.btn-view-site {
+    background: var(--bg-tertiary);
+    color: var(--text-secondary);
+}
+
+.profile-name {
+    color: var(--text-primary);
+}
+
+.profile-role {
+    color: var(--text-secondary);
+}
+
+/* Stats Cards */
+.stat-card {
+    background: var(--bg-secondary);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+body[data-theme="dark"] .stat-card {
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.stat-info p {
+    color: var(--text-secondary);
+}
+
+/* Dashboard Cards */
+.dashboard-card {
+    background: var(--bg-secondary);
+    border-color: var(--border-color);
+}
+
+body[data-theme="dark"] .dashboard-card {
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+.card-header {
+    background: var(--bg-tertiary);
+    border-bottom-color: var(--border-color);
+}
+
+.card-header h2 {
+    color: var(--text-primary);
+}
+
+/* Table */
+.data-table th {
+    background: var(--bg-tertiary);
+    color: var(--text-secondary);
+}
+
+.data-table td {
+    border-bottom-color: var(--border-color);
+    color: var(--text-primary);
+}
+
+.data-table tr:hover {
+    background: var(--bg-tertiary);
+}
+
+/* Product Item */
+.product-item:hover {
+    background: var(--bg-tertiary);
+}
+
+.product-info h4 {
+    color: var(--text-primary);
+}
+
+/* Theme Toggle Button */
+.theme-toggle-admin {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: var(--bg-tertiary);
+    border: 2px solid var(--border-color);
+    color: var(--text-secondary);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+.theme-toggle-admin:hover {
+    background: linear-gradient(135deg, #ec4899 0%, #db2777 100%);
+    color: white;
+    border-color: transparent;
+    transform: scale(1.1);
+}
+
+.theme-toggle-admin i {
+    transition: transform 0.5s ease;
+}
+
+body[data-theme="dark"] .theme-toggle-admin i {
+    transform: rotate(180deg);
+}
+
+/* Forms */
+body[data-theme="dark"] input,
+body[data-theme="dark"] textarea,
+body[data-theme="dark"] select {
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+    border-color: var(--border-color);
+}
+
+body[data-theme="dark"] input::placeholder,
+body[data-theme="dark"] textarea::placeholder {
+    color: var(--text-secondary);
+}
+
+/* Coupon Form Card */
+body[data-theme="dark"] .coupon-form-card {
+    background: var(--bg-secondary);
+}
+
+body[data-theme="dark"] .coupon-form-card h2 {
+    color: var(--text-primary);
+}
+
+body[data-theme="dark"] .form-group label {
+    color: var(--text-primary);
+}
+
+body[data-theme="dark"] .form-checkbox {
+    background: var(--bg-tertiary);
+}
+
+/* Coupons Table Card */
+body[data-theme="dark"] .coupons-table-card {
+    background: var(--bg-secondary);
+}
+
+body[data-theme="dark"] .coupons-table-card h2 {
+    color: var(--text-primary);
+}
+
+/* Alert */
+body[data-theme="dark"] .alert-success {
+    background: rgba(16, 185, 129, 0.2);
+    color: #10b981;
+}
+
+/* Smooth transitions */
+.sidebar,
+.admin-header,
+.stat-card,
+.dashboard-card,
+.data-table,
+input,
+textarea,
+select,
+.btn-view-site,
+.theme-toggle-admin {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}

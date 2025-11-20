@@ -1,0 +1,18 @@
+# Ignore uploads folder
+uploads/*
+!uploads/.gitkeep
+
+# Ignore config files with sensitive data
+config/database.php
+
+# Ignore IDE files
+.vscode/
+.idea/
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore temporary files
+*.tmp
+*.log

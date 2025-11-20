@@ -1,0 +1,77 @@
+/* Search Box Fix - Critical fixes to make input work */
+
+/* Fix 1: Ensure ::before pseudo-element doesn't block input */
+.search-box::before,
+.search-box::after {
+    pointer-events: none !important;
+    z-index: 0 !important;
+}
+
+/* Fix 2: Make sure input is on top and clickable */
+.search-box {
+    position: relative !important;
+    z-index: 100 !important;
+}
+
+.search-box input {
+    /* Critical: Make input clickable and typeable */
+    pointer-events: auto !important;
+    user-select: text !important;
+    -webkit-user-select: text !important;
+    -moz-user-select: text !important;
+    -ms-user-select: text !important;
+    cursor: text !important;
+    
+    /* Ensure input is on top */
+    position: relative !important;
+    z-index: 100 !important;
+    
+    /* Style fixes */
+    background: transparent !important;
+    border: none !important;
+    
+    /* Ensure it's not disabled */
+    opacity: 1 !important;
+}
+
+.search-box input:focus {
+    outline: none !important;
+    z-index: 101 !important;
+}
+
+/* Fix 3: Icon should not block clicks */
+.search-icon {
+    pointer-events: none !important;
+    z-index: 1 !important;
+}
+
+/* Fix 4: Button should be clickable */
+.search-btn {
+    pointer-events: auto !important;
+    z-index: 10 !important;
+    cursor: pointer !important;
+}
+
+/* Fix 5: Ensure parent doesn't block */
+.header-actions {
+    pointer-events: auto !important;
+}
+
+.header-actions > * {
+    pointer-events: auto !important;
+}
+
+/* Fix 6: Remove any transform that might cause issues */
+.search-box input {
+    transform: none !important;
+}
+
+/* Debug mode - uncomment to see clickable area */
+/*
+.search-box input {
+    background: rgba(255, 0, 0, 0.2) !important;
+}
+.search-box::before {
+    background: rgba(0, 255, 0, 0.2) !important;
+}
+*/

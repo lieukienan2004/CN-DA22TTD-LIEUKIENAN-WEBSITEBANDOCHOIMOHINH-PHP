@@ -1,0 +1,462 @@
+/**
+ * PREMIUM HOVER EFFECTS
+ * Các hiệu ứng hover cao cấp và ấn tượng
+ */
+
+/* Shine Effect on Hover */
+.shine-effect {
+    position: relative;
+    overflow: hidden;
+}
+
+.shine-effect::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.4),
+        transparent
+    );
+    transition: left 0.7s ease;
+}
+
+.shine-effect:hover::before {
+    left: 100%;
+}
+
+/* Glow Pulse Effect */
+@keyframes glowPulse {
+    0%, 100% {
+        box-shadow: 
+            0 0 20px rgba(102, 126, 234, 0.4),
+            0 0 40px rgba(102, 126, 234, 0.2);
+    }
+    50% {
+        box-shadow: 
+            0 0 30px rgba(102, 126, 234, 0.6),
+            0 0 60px rgba(102, 126, 234, 0.3);
+    }
+}
+
+.glow-pulse:hover {
+    animation: glowPulse 2s ease-in-out infinite;
+}
+
+/* 3D Flip Card */
+.flip-card-3d {
+    perspective: 1000px;
+    width: 100%;
+    height: 300px;
+}
+
+.flip-card-3d-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.flip-card-3d:hover .flip-card-3d-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-3d-front,
+.flip-card-3d-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flip-card-3d-front {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.flip-card-3d-back {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+    transform: rotateY(180deg);
+}
+
+/* Magnetic Button Effect */
+.magnetic-btn {
+    transition: transform 0.3s ease;
+}
+
+.magnetic-btn:hover {
+    transform: scale(1.05);
+}
+
+/* Neon Glow Effect */
+.neon-glow {
+    text-shadow: 
+        0 0 10px rgba(102, 126, 234, 0.8),
+        0 0 20px rgba(102, 126, 234, 0.6),
+        0 0 30px rgba(102, 126, 234, 0.4);
+    animation: neonFlicker 3s ease-in-out infinite;
+}
+
+@keyframes neonFlicker {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
+}
+
+/* Bubble Float Effect */
+@keyframes bubbleFloat {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+    }
+    50% {
+        transform: translateY(-20px) scale(1.05);
+    }
+}
+
+.bubble-float:hover {
+    animation: bubbleFloat 2s ease-in-out infinite;
+}
+
+/* Gradient Border Animation */
+.gradient-border {
+    position: relative;
+    background: white;
+    border-radius: 16px;
+    padding: 2px;
+}
+
+.gradient-border::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 16px;
+    padding: 2px;
+    background: linear-gradient(45deg, #667eea, #764ba2, #f093fb, #667eea);
+    background-size: 300% 300%;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    animation: gradientRotate 4s linear infinite;
+}
+
+@keyframes gradientRotate {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Tilt Effect */
+.tilt-effect {
+    transition: transform 0.3s ease;
+}
+
+.tilt-effect:hover {
+    transform: perspective(1000px) rotateX(5deg) rotateY(5deg);
+}
+
+/* Zoom In Effect */
+.zoom-in {
+    transition: transform 0.4s ease;
+}
+
+.zoom-in:hover {
+    transform: scale(1.1);
+}
+
+/* Slide Up Effect */
+.slide-up {
+    transition: transform 0.4s ease;
+}
+
+.slide-up:hover {
+    transform: translateY(-10px);
+}
+
+/* Bounce Effect */
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+.bounce-hover:hover {
+    animation: bounce 0.6s ease;
+}
+
+/* Shake Effect */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+.shake-hover:hover {
+    animation: shake 0.5s ease;
+}
+
+/* Rotate Effect */
+.rotate-hover {
+    transition: transform 0.4s ease;
+}
+
+.rotate-hover:hover {
+    transform: rotate(5deg);
+}
+
+/* Skew Effect */
+.skew-hover {
+    transition: transform 0.4s ease;
+}
+
+.skew-hover:hover {
+    transform: skewY(-2deg);
+}
+
+/* Shadow Lift Effect */
+.shadow-lift {
+    transition: all 0.4s ease;
+}
+
+.shadow-lift:hover {
+    transform: translateY(-8px);
+    box-shadow: 
+        0 20px 60px rgba(0, 0, 0, 0.2),
+        0 10px 30px rgba(102, 126, 234, 0.3);
+}
+
+/* Gradient Text Hover */
+.gradient-text-hover {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    transition: all 0.3s ease;
+}
+
+.gradient-text-hover:hover {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    transform: scale(1.05);
+}
+
+/* Border Expand Effect */
+.border-expand {
+    position: relative;
+}
+
+.border-expand::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    transition: all 0.4s ease;
+    transform: translateX(-50%);
+}
+
+.border-expand:hover::after {
+    width: 100%;
+}
+
+/* Blur to Focus Effect */
+.blur-focus {
+    filter: blur(2px);
+    transition: filter 0.4s ease;
+}
+
+.blur-focus:hover {
+    filter: blur(0);
+}
+
+/* Color Shift Effect */
+.color-shift {
+    transition: all 0.4s ease;
+}
+
+.color-shift:hover {
+    filter: hue-rotate(45deg);
+}
+
+/* Pulse Scale Effect */
+@keyframes pulseScale {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.pulse-scale:hover {
+    animation: pulseScale 1s ease-in-out infinite;
+}
+
+/* Neon Border Effect */
+.neon-border {
+    border: 2px solid transparent;
+    transition: all 0.4s ease;
+}
+
+.neon-border:hover {
+    border-color: #667eea;
+    box-shadow: 
+        0 0 10px rgba(102, 126, 234, 0.5),
+        0 0 20px rgba(102, 126, 234, 0.3),
+        inset 0 0 10px rgba(102, 126, 234, 0.2);
+}
+
+/* Glitch Effect */
+@keyframes glitch {
+    0% { transform: translate(0); }
+    20% { transform: translate(-2px, 2px); }
+    40% { transform: translate(-2px, -2px); }
+    60% { transform: translate(2px, 2px); }
+    80% { transform: translate(2px, -2px); }
+    100% { transform: translate(0); }
+}
+
+.glitch-hover:hover {
+    animation: glitch 0.3s ease;
+}
+
+/* Liquid Fill Effect */
+.liquid-fill {
+    position: relative;
+    overflow: hidden;
+}
+
+.liquid-fill::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.2) 0%, rgba(118, 75, 162, 0.2) 100%);
+    transition: height 0.4s ease;
+}
+
+.liquid-fill:hover::before {
+    height: 100%;
+}
+
+/* Morph Effect */
+.morph-hover {
+    border-radius: 20px;
+    transition: border-radius 0.4s ease;
+}
+
+.morph-hover:hover {
+    border-radius: 50%;
+}
+
+/* Split Text Effect */
+.split-text {
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.split-text:hover {
+    letter-spacing: 3px;
+}
+
+/* Underline Slide Effect */
+.underline-slide {
+    position: relative;
+    text-decoration: none;
+}
+
+.underline-slide::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    transition: width 0.4s ease;
+}
+
+.underline-slide:hover::after {
+    width: 100%;
+}
+
+/* Icon Spin Effect */
+.icon-spin:hover i {
+    display: inline-block;
+    animation: iconSpin 0.6s ease;
+}
+
+@keyframes iconSpin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Background Slide Effect */
+.bg-slide {
+    position: relative;
+    overflow: hidden;
+}
+
+.bg-slide::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+    transition: left 0.4s ease;
+}
+
+.bg-slide:hover::before {
+    left: 0;
+}
+
+/* Apply shine effect to stat cards */
+.stat-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.3),
+        transparent
+    );
+    transition: left 0.7s ease;
+}
+
+.stat-card:hover::after {
+    left: 100%;
+}
+
+/* Apply to dashboard cards */
+.dashboard-card {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Apply to buttons */
+.btn-gradient-primary,
+.btn-gradient-success,
+.btn-gradient-danger {
+    position: relative;
+    overflow: hidden;
+}
