@@ -1,0 +1,59 @@
+========================================
+HƯỚNG DẪN SỬA LỖI THÔNG BÁO
+========================================
+
+Mở phpMyAdmin → Chọn database "kienan123" → Tab SQL → Copy và chạy các lệnh sau:
+
+========================================
+BƯỚC 1: Xóa Foreign Key Constraint
+========================================
+
+ALTER TABLE thongbao DROP FOREIGN KEY thongbao_ibfk_1;
+
+========================================
+BƯỚC 2: Thêm Index
+========================================
+
+ALTER TABLE thongbao ADD INDEX idx_user_id (user_id);
+
+========================================
+BƯỚC 3: Thêm Cột user_type
+========================================
+
+ALTER TABLE thongbao ADD COLUMN user_type ENUM('user', 'admin') DEFAULT 'user' AFTER user_id;
+
+========================================
+BƯỚC 4: Tạo Bảng traloithongbao
+========================================
+
+CREATE TABLE IF NOT EXISTS traloithongbao (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    contact_id INT NOT NULL,
+    admin_id INT NOT NULL,
+    message TEXT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (contact_id) REFERENCES contact_messages(id) ON DELETE CASCADE,
+    INDEX idx_contact_id (contact_id),
+    INDEX idx_admin_id (admin_id),
+    INDEX idx_created_at (created_at)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+========================================
+BƯỚC 5: Kiểm Tra
+========================================
+
+-- Kiểm tra cấu trúc bảng thongbao
+DESCRIBE thongbao;
+
+-- Kiểm tra cấu trúc bảng traloithongbao
+DESCRIBE traloithongbao;
+
+========================================
+XONG! Bây giờ test lại hệ thống
+========================================
+
+1. Vào trang liên hệ và gửi tin nhắn
+2. Đăng nhập admin
+3. Kiểm tra có thông báo không
+
+========================================
