@@ -16,3 +16,6 @@ Thumbs.db
 # Ignore temporary files
 *.tmp
 *.log
+
+# Keep thesis folder structure but ignore temp files
+thesis/~$*
